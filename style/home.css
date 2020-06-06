@@ -1,6 +1,6 @@
 /*------------------Basic Config------------------*/
 body {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
 }
 a{
     text-decoration: none;
@@ -133,6 +133,7 @@ a:hover{
 .sidebar{
     min-height: 700px;
     float:left;
+    background:red;
 }
 .inner__sidebar{
     min-height:700px;
