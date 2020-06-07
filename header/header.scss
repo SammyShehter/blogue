@@ -1,0 +1,61 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin round-shape {
+    width: 30px;
+    height: 30px;
+    background: grey;
+    border-radius: 50%;
+}
+
+.main{
+    justify-content: space-between;
+    .left{
+        height: 80px;
+        .logo{
+            width: 120px;
+        }
+        .menu{
+            list-style-type:none;
+            padding-left: 3vw;
+            a{
+                height: 100%;
+                li{
+                    @include center;
+                    height: 100%;
+                    padding: 0 2vw;
+                    &:hover{
+                        background:lightyellow
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        width: 30%;
+        justify-content: space-around;
+        align-items:center;
+        .socials{
+            a{
+                @include center;
+                @include round-shape;
+                margin: 0 .2vw;
+            }
+        }
+        .search{
+            a{
+                @include center;
+                @include round-shape;
+            }
+        }
+    }
+}
+
+
+
+.selected{
+    background:yellow;
+}
