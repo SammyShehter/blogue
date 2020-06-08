@@ -17,19 +17,28 @@ require "includes/config.php";
 <body>
     <header>
         <div class="container-fluid">
-
             <div class="main row">
-
                 <div class="left row">
                     <a class="logo" href="<?php $links['homepage']; ?>"><img class="img-fluid" src="header/4.png"
                             alt="Logotype Sammy_Shehter_Blogue"></a>
+                        
                     <ul class="menu flex-center">
-                        <a href="<?php $links['homepage']; ?>"><li class="selected" >Home</li></a>
-                        <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                        <!-- DROPDOWN STRUCTURE -->                        
+                        <div class="dropdown">
+                            <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                            <div class="dropdown-menu">
+                                <a href="#">KEK</a>
+                                <a href="#">KEK</a>
+                                <a href="#">KEK</a>                            
+                            </div>
+                        </div>
+                        <!-- DROPDOWN STRUCTURE END -->
+
+                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
+                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
                     </ul>
                 </div>
                 <div class="right row">
@@ -40,12 +49,11 @@ require "includes/config.php";
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    <div class="search">
+                    <div class="search row">
                         <a href="#"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
-
             </div>
-
         </div>
+        <script src="header.js"></script>
     </header>
