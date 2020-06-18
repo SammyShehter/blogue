@@ -18,42 +18,32 @@ require "includes/config.php";
     <header>
         <div class="container-fluid">
             <div class="main row">
-                <div class="left row">
-                    <a class="logo" href="<?php $links['homepage']; ?>"><img class="img-fluid" src="header/4.png"
-                            alt="Logotype Sammy_Shehter_Blogue"></a>
-                        
-                    <ul class="menu flex-center">
-                        <!-- DROPDOWN STRUCTURE -->                        
-                        <div class="dropdown">
-                            <a href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                            <div class="dropdown-menu">
-                                <a href="#">KEK</a>
-                                <a href="#">KEK</a>
-                                <a href="#">KEK</a>                            
-                            </div>
+                <a class="logo" href="<?php $links['homepage']; ?>"><img class="img-fluid" src="header/4.png"
+                        alt="Logotype Sammy_Shehter_Blogue"></a>
+                    
+                <ul class="menu flex-center max-height">
+                    <!-- DROPDOWN STRUCTURE -->                        
+                    <div class="dropdown max-height">
+                        <li><a class="flex-center menu-active" href="<?php $links['homepage']; ?>">Home</a></li>
+                        <div class="dropdown-menu">
+                            <a href="#">KEK</a>
+                            <a href="#">KEK</a>
+                            <a href="#">KEK</a>                            
                         </div>
-                        <!-- DROPDOWN STRUCTURE END -->
+                    </div>
+                    <!-- DROPDOWN STRUCTURE END -->
 
-                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                        <a class="NON-dropdown" href="<?php $links['homepage']; ?>"><li>Home</li></a>
-                    </ul>
-                </div>
-                <div class="right row">
-                    <div class="socials row">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </div>
-                    <div class="search row">
-                        <a href="#"><i class="fa fa-search"></i></a>
-                    </div>
+                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                </ul>
+
+                <div class="search flex-center">
+                    <a href="#"><i class="fa fa-search"></i></a>
                 </div>
             </div>
         </div>
-        <script src="header.js"></script>
+        <script src="./header/header.js"></script>
     </header>

@@ -1,0 +1,11 @@
+.socials {
+    margin-left: auto;
+    margin-right: auto;
+    a {
+      @include round-shape;
+      margin: 0 0.2vw;
+      i {
+        transform: translate(10px, 7px);
+      }
+    }
+  }

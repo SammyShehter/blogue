@@ -1,0 +1,12 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+@mixin round-shape {
+width: 30px;
+height: 30px;
+background: #c7c7c7;
+border-radius: 50%;
+}

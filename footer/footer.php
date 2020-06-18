@@ -1,7 +1,11 @@
-      <div class="footer">
-        <div class="inner__footer">
-          <div class='container'>
+    <div class="socials flex-center">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    </div>
 
-          </div>
-        </div>
-      </div> 
+</body>
+
+</html>

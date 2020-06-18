@@ -1,6 +1,10 @@
 @import './lib';
+@import './mixins';
+@import './colors';
 @import '../about_me/about_me';
 @import '../header/header';
+@import '../fourBoxes/fourBoxes';
+@import '../footer/footer';
 
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
