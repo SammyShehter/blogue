@@ -1,0 +1,14 @@
+.boxes{
+    .box{
+        background:red;
+        height: 25vh;
+    }
+}
+
+@include media(">=phone", "<=tablet"){
+    .boxes{
+        .box{
+            height: 10vh;
+        }
+    }
+}

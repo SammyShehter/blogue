@@ -1,4 +1,4 @@
-@import './lib';
+@import './myLib/lib';
 @import './mixins';
 @import './colors';
 @import '../about_me/about_me';
@@ -8,6 +8,8 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -16,4 +18,88 @@
 
 body{
     font-family: 'Lato', sans-serif;
+    background: #f0f0f0;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.postMain{
+    justify-content: space-evenly;
+
+    .postDemo{
+        display:flex;
+        margin:2vw;
+        background:#fff;
+
+        small{
+            font-weight: 500;
+            color:#616060;
+            font-size: .75rem;
+            line-height: 1.375rem;
+        }
+
+        .postText{
+            width: 60%;
+            padding:1.5rem;
+
+            .postTitle{
+                margin:0;
+                a{
+                    color: #333;
+                    font-size: 1.375rem;
+                    line-height: 1.625rem;
+                    font-weight: 400;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .postCat{
+                font-weight: 500;
+                margin-bottom: 1vh;
+                line-height: 1.375rem;
+                font-size: .875rem
+            }
+
+            .postDesc{
+                padding:1vh 0 1vh 0;
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+
+            .readMore{
+                font-weight: bold;
+                color: #0177d4;
+                flex-wrap: nowrap;
+                &:hover{
+                    color: darkblue;
+                }
+            }
+        }
+
+        .postImg{
+            width:40%;
+
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }    
+}
+
+@include media('<=tablet'){
+    .postMain{
+        .postDemo{
+            flex-direction: column-reverse;
+            margin:.5vw;
+            .postText{
+                width: 100%;
+            }
+            .postImg{
+                width:100%;
+            }
+        }
+    }
 }

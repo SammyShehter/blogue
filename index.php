@@ -1,4 +1,34 @@
+<?php
+include "./header/header.php";
+include "./fourBoxes/fourBoxes.php"; 
 
-    <?php include "./header/header.php"; ?>
-    <?php include "./fourBoxes/fourBoxes.php"; ?>
-    <?php include "./footer/footer.php"; ?>
+echo "<div class='grid postMain'>";
+    try{
+        $stmt = $db->query('SELECT postID, postCat, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC');
+        while($row = $stmt->fetch()){
+            $date = date('l \, \a\t jS \of F Y', strtotime($row['postDate']));
+            echo "
+                    <div class='u-1 u-lg-5-12 postDemo'>
+                        <div class='postText'>
+                            <small>Posted on ${date}</small>
+                            <h1 class='postTitle'><a href='./article/article.php?id=${row['postID']}'>${row['postTitle']}</a></h1>
+                            <h4 class='postCat'>Categorie: <a href='#'>${row['postCat']}</a></h4>
+                            <p class='postDesc'>${row['postDesc']}...<a class='readMore flex' href='./article/article.php?id=${row['postID']}'>Read More</a></p>
+                        </div>
+                        <div class='postImg'>
+                            <a href='./article/article.php?id=${row['postID']}'>
+                                <img class='img-fluid' src='includes/pictures/${row['postImg']}'>
+                            </a>
+                        </div>
+                    </div>
+            ";
+        }
+    } catch(PDOExeption $e){
+        echo $e->getMessage();
+    }
+echo "</div>";
+
+
+include "./footer/footer.php"; 
+
+?>

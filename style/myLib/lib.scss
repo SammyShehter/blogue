@@ -1,0 +1,43 @@
+@import './resetAndNorm';
+@import './mediaQuery';
+@import './pureGrid';
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flex{
+  display: flex;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.max-height{
+  height: 100%;
+}
+.img-fluid{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+//my Own preference
+a{
+  text-decoration: none;
+}
+
+/*Only if you need to add padding to you div*/
+  .pure-g > div {
+    box-sizing: border-box;
+}
+/*Only if you need to add padding to you div END*/
