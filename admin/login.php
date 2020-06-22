@@ -26,3 +26,5 @@ if(isset($_POST['submit'])){
 }
 
 if(isset($message)){ echo $message; }
+
+?>
