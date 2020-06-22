@@ -62,3 +62,5 @@ echo "
 ";
 
 include "./footer/footer.php";
+
+?>
