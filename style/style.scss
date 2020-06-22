@@ -5,12 +5,13 @@
 @import '../header/header';
 @import '../fourBoxes/fourBoxes';
 @import '../footer/footer';
+@import '../article/article';
 
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-
+//CommonStyles
 *{
     box-sizing: border-box;
 }
@@ -22,7 +23,26 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+small{
+    font-weight: 500;
+    color:#616060;
+    font-size: .75rem;
+    line-height: 1.375rem;
+}
 
+p{
+    color:#5f5e5e;
+}
+
+.postCat{
+    font-weight: 500;
+    margin-bottom: 1vh;
+    line-height: 1.375rem;
+    font-size: .875rem
+}
+//CommonStyles END
+
+//INDEX.PHP
 .postMain{
     justify-content: space-evenly;
 
@@ -30,13 +50,6 @@ body{
         display:flex;
         margin:2vw;
         background:#fff;
-
-        small{
-            font-weight: 500;
-            color:#616060;
-            font-size: .75rem;
-            line-height: 1.375rem;
-        }
 
         .postText{
             width: 60%;
@@ -53,13 +66,6 @@ body{
                         text-decoration: underline;
                     }
                 }
-            }
-
-            .postCat{
-                font-weight: 500;
-                margin-bottom: 1vh;
-                line-height: 1.375rem;
-                font-size: .875rem
             }
 
             .postDesc{
@@ -84,6 +90,10 @@ body{
             img{
                 width:100%;
                 height:100%;
+                display: block;
+                // width: 100vw;
+                // height: 100vh;
+                object-fit: cover;
             }
         }
     }    
@@ -103,3 +113,4 @@ body{
         }
     }
 }
+//INDEX.PHP END

@@ -2,7 +2,7 @@
   background: yellow;
 }
 .main {
-  background: $base-color;
+  background: #fff;
   height: 80px;
   .logo {
     width: 120px;
@@ -41,7 +41,7 @@
         display: block;
         a {
           color: black;
-          background-color: $base-color;
+          background-color: #fff;
           padding: 2vh 5vw 2vh 1vw;
           text-decoration: none;
           display: block;

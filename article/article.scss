@@ -1,0 +1,35 @@
+.container{
+    margin:4vh;
+    .post{
+        padding: 4vh 4vw;
+        margin: 0 auto 0 auto;
+        background:#fff;
+
+        .postText{
+            .postTitle{
+                margin: 0 0 .5vh 0;
+                font-size: 2.1875rem;
+                line-height: 2.625rem;
+                font-weight: 400;
+            }
+            .postContetnt{
+                p{
+                    font-size: 1.1875rem;
+                    line-height: 1.8125rem;
+                    margin: 1rem 0 2.5rem 0;
+                }
+            }
+        }
+    }
+    .kek{
+        height: 1000px;
+        padding: 4vh 2vw;
+        background:#fff;
+
+        div{
+            background:red;
+            height: 800px;
+        }
+    }
+}
+    

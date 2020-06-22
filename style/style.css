@@ -1465,7 +1465,7 @@ a {
   background: yellow; }
 
 .main {
-  background: lightyellow;
+  background: #fff;
   height: 80px;
   /*DROPDOWN SECTION*/ }
   .main .logo {
@@ -1494,7 +1494,7 @@ a {
       display: block; }
       .main .dropdown:hover .dropdown-menu a {
         color: black;
-        background-color: lightyellow;
+        background-color: #fff;
         padding: 2vh 5vw 2vh 1vw;
         text-decoration: none;
         display: block; }
@@ -1520,7 +1520,8 @@ a {
     height: 10vh; } }
 .socials {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding: 4vh 0 4vh 0; }
   .socials a {
     width: 30px;
     height: 30px;
@@ -1530,6 +1531,29 @@ a {
     .socials a i {
       transform: translate(10px, 7px); }
 
+.container {
+  margin: 4vh; }
+  .container .post {
+    padding: 4vh 4vw;
+    margin: 0 auto 0 auto;
+    background: #fff; }
+    .container .post .postText .postTitle {
+      margin: 0 0 .5vh 0;
+      font-size: 2.1875rem;
+      line-height: 2.625rem;
+      font-weight: 400; }
+    .container .post .postText .postContetnt p {
+      font-size: 1.1875rem;
+      line-height: 1.8125rem;
+      margin: 1rem 0 2.5rem 0; }
+  .container .kek {
+    height: 1000px;
+    padding: 4vh 2vw;
+    background: #fff; }
+    .container .kek div {
+      background: red;
+      height: 800px; }
+
 * {
   box-sizing: border-box; }
 
@@ -1538,17 +1562,27 @@ body {
   background: #f0f0f0;
   font-family: 'Lato', sans-serif; }
 
+small {
+  font-weight: 500;
+  color: #616060;
+  font-size: .75rem;
+  line-height: 1.375rem; }
+
+p {
+  color: #5f5e5e; }
+
+.postCat {
+  font-weight: 500;
+  margin-bottom: 1vh;
+  line-height: 1.375rem;
+  font-size: 0.875rem; }
+
 .postMain {
   justify-content: space-evenly; }
   .postMain .postDemo {
     display: flex;
     margin: 2vw;
     background: #fff; }
-    .postMain .postDemo small {
-      font-weight: 500;
-      color: #616060;
-      font-size: .75rem;
-      line-height: 1.375rem; }
     .postMain .postDemo .postText {
       width: 60%;
       padding: 1.5rem; }
@@ -1561,11 +1595,6 @@ body {
           font-weight: 400; }
           .postMain .postDemo .postText .postTitle a:hover {
             text-decoration: underline; }
-      .postMain .postDemo .postText .postCat {
-        font-weight: 500;
-        margin-bottom: 1vh;
-        line-height: 1.375rem;
-        font-size: 0.875rem; }
       .postMain .postDemo .postText .postDesc {
         padding: 1vh 0 1vh 0;
         font-size: 1rem;
@@ -1580,7 +1609,9 @@ body {
       width: 40%; }
       .postMain .postDemo .postImg img {
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        display: block;
+        object-fit: cover; }
 
 @media (max-width: 768px) {
   .postMain .postDemo {

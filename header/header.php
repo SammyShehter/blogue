@@ -14,13 +14,13 @@
     <header>
         <div class="container-fluid">
             <div class="main row">
-                <a class="logo" href="<?php $links['homepage']; ?>"><img class="img-fluid" src="header/4.png"
+                <a class="logo" href="<?php echo $config['links']['homepage']; ?>"><img class="img-fluid" src="header/4.png"
                         alt="Logotype Sammy_Shehter_Blogue"></a>
                     
                 <ul class="menu flex-center max-height">
                     <!-- DROPDOWN STRUCTURE -->                        
                     <div class="dropdown max-height">
-                        <li><a class="flex-center menu-active" href="<?php $links['homepage']; ?>">Home</a></li>
+                        <li><a class="flex-center menu-active" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
                         <div class="dropdown-menu">
                             <a href="#">KEK</a>
                             <a href="#">KEK</a>
@@ -29,11 +29,11 @@
                     </div>
                     <!-- DROPDOWN STRUCTURE END -->
 
-                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php $links['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
+                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
                 </ul>
 
                 <div class="search flex-center">
