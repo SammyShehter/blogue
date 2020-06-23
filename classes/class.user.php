@@ -37,6 +37,7 @@ class User{
 
         if(password_verify($password, $hash) == 1){
             $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
 
             return true;
         }

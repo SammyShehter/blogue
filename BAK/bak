@@ -1,0 +1,20 @@
+//CATEGORIE
+
+add-post.php
+
+<label for="postCat">
+    <?php $stmt = $db->query('SELECT postCatFROM blogue_posts'); ?>
+    <select name="postCat">
+        <?php
+            while($row = $stmt->{fetch})
+            ?>
+    </select>
+
+index.php
+<h4 class='postCat'>Categorie: <a href='#'>${row['postCat']}</a></h4>
+
+article.php
+<h4 class='postCat'>Categorie: <a href='#'>${row['postCat']}</a></h4>
+
+
+//CATEGORIE END

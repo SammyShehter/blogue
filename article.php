@@ -7,20 +7,15 @@ $articleIdArray = $db->query('SELECT postID FROM blogue_posts'); //Getting all p
 
 $theCheck = false; //Default check is false
 
-//array of all possible ID's
-$IdList = [];
-while ($row = $articleIdArray->fetch()) {
-    array_push($IdList, $row['postID']);
-    
-}
 
 //check prosses
-foreach ($IdList as $num) {
-    if ($_GET['id'] !== '' && $_GET['id'] == $num) {
+while($row = $articleIdArray->fetch()){
+    if ($_GET['id'] !== '' && in_array($_GET['id'], $row['postID'])) {
         $theCheck = true;
         break;
     }
 }
+
 
 //If check failed, user gets redirected to main page
 if (!$theCheck) {
@@ -28,9 +23,9 @@ if (!$theCheck) {
 }
 //Article ID validation END
 
-$stmt = $db->prepare('SELECT postID, postCat, postTitle, postCont, postDate, postImg FROM blogue_posts WHERE postID = :postID');
+$stmt = $db->prepare('SELECT postID, postTitle, postCont, postDate, postImg FROM blogue_posts WHERE postID = :postID');
 
-$stmt->execute(array('postID' => $_GET['id']));
+$stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
 
 
@@ -48,7 +43,6 @@ echo "
             <div class='postText'>
                 <small>Posted on ${date}</small>
                 <h1 class='postTitle'>${row['postTitle']}</h1>
-                <h4 class='postCat'>Categorie: <a href='#'>${row['postCat']}</a></h4>
                 <div class='postImg'>
                     <img class='img-fluid' src='includes/pictures/${row['postImg']}'>
                 </div>

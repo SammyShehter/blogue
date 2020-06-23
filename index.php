@@ -4,7 +4,7 @@ require_once "./header/header.php";
 
 echo "<div class='grid postMain'>";
     try{
-        $stmt = $db->query('SELECT postID, postCat, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC');
+        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC');
         while($row = $stmt->fetch()){
             $date = date('l \, \a\t jS \of F Y', strtotime($row['postDate']));
             echo "
@@ -12,7 +12,6 @@ echo "<div class='grid postMain'>";
                         <div class='postText'>
                             <small>Posted on ${date}</small>
                             <h1 class='postTitle'><a href='./article.php?id=${row['postID']}'>${row['postTitle']}</a></h1>
-                            <h4 class='postCat'>Categorie: <a href='#'>${row['postCat']}</a></h4>
                             <div class='postDesc'><p>${row['postDesc']}...</p><a class='readMore flex' href='./article.php?id=${row['postID']}'>Read More</a></div>
                         </div>
                         <div class='postImg'>

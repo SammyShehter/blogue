@@ -1,26 +1,19 @@
 <?php
-require_once '../includes/config.php';
+
+require_once './admin-header.php';
 
 //if not logged in redirecting to login page
-if($user->is_logged_in()){ header('Location: index.php'); }
+if($user->is_logged_in()){ header('Location: index.php'); exit; }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
-    <title>Blogue_Login</title>
-</head>
-<body>
-    <div class='authForm flex-center'>
-        <form action="" method="post">
-            <input type="text" name="username" placeholder="Username" value="" />
-            <input type="password" name="password" placeholder="Password" value="" />
-            <button type="submit" name="submit">Login</button>
-        </form>
-    </div>
-</body>
+
+<div class='authForm flex-center'>
+    <form action="" method="post">
+        <input type="text" name="username" placeholder="Username" value="" />
+        <input type="password" name="password" placeholder="Password" value="" />
+        <button type="submit" name="submit">Login</button>
+    </form>
+</div>
+
 <script>
 
 const body = document.querySelector('body');
@@ -39,10 +32,13 @@ async function date() {
 date();
 setInterval(date,1000*60*60);
 </script>
-</html>
+
 
 
 <?php
+
+require_once './admin-footer.php';
+
 
 //process login form if submitted
 if(isset($_POST['submit'])){
