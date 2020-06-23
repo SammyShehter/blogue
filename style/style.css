@@ -1554,13 +1554,40 @@ a {
       background: red;
       height: 800px; }
 
+.authForm {
+  height: 100vh; }
+  .authForm form {
+    background: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 3rem;
+    width: 30%; }
+    .authForm form input {
+      outline: 0;
+      background: #f2f2f2;
+      border: 0;
+      margin: 0 0 1rem;
+      padding: 1rem;
+      width: 100%; }
+    .authForm form button {
+      text-transform: uppercase;
+      outline: 0;
+      background: #0177d4;
+      border: 0;
+      padding: 1rem;
+      color: #FFFFFF;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+      width: 100%; }
+      .authForm form button:hover, .authForm form button:active, .authForm form button:focus {
+        background: #015ba1; }
+
 * {
   box-sizing: border-box; }
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #f0f0f0;
-  font-family: 'Lato', sans-serif; }
+  background: #f0f0f0; }
 
 small {
   font-weight: 500;

@@ -1,0 +1,35 @@
+.authForm{
+    height: 100vh;
+
+    form{
+        background:white;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        padding:3rem;
+        width: 30%;
+
+        input{
+            outline: 0;
+            background: #f2f2f2;
+            border: 0;
+            margin: 0 0 1rem;
+            padding: 1rem;
+            width: 100%;
+        }
+        button{
+            text-transform: uppercase;
+            outline: 0;
+            background: #0177d4;
+            border: 0;
+            padding: 1rem;
+            color: #FFFFFF;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover,&:active,&:focus {
+                background: #015ba1;
+              }
+        }
+    }
+}

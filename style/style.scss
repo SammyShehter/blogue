@@ -7,6 +7,10 @@
 @import '../footer/footer';
 @import '../article/article';
 
+//Admin Area
+@import '../admin/admin_scss/login';
+@import '../admin/admin_scss/index';
+//Admin Area End
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
@@ -20,7 +24,6 @@
 body{
     font-family: 'Lato', sans-serif;
     background: #f0f0f0;
-    font-family: 'Lato', sans-serif;
 }
 
 small{
