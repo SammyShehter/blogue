@@ -9,6 +9,19 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
 ?>
 
 
+<?php
+    if(isset($_GET['delpost'])){
+        $stmt = $db->prepare('DELETE FROM blogue_posts WHERE postID = :postID');
+        $stmt->execute(array(':postID' => $_GET['delpost']));
+
+        header('Location: index.php?action=deleted');
+    }
+
+    if(isset($_GET['action'])){
+        echo "<h2 class='deleted'>Post ${_GET['action']}</h2>";
+    }
+?>
+
 <table>
     <tr>
         <th>Title</th>
@@ -22,12 +35,14 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
         $stmt = $db->query('SELECT postID, postDesc, postTitle, postDate FROM blogue_posts');
         while($row = $stmt->fetch()){
             $postDate = date('jS M Y', strtotime($row['postDate']));
+            $postDesc = substr($row['postDesc'], 0,50);
             echo "
                     <tr>
                         <td>${row['postTitle']}</td>
                         <td>${postDate}</td>
-                        <td>${row['postDesc']}</td>
-                        <a href='edit-post.php?id${row['postID']}'>Edit Post</a>
+                        <td>${postDesc}</td>
+                        <td>
+                        <a href='edit-post.php?id=${row['postID']}'>Edit Post</a>
                         ||
                         <a href='javascript:delpost(${row['postID']},`${row['postTitle']}`)'>Delete Post</a>
                         </td>
@@ -52,19 +67,6 @@ function delpost(id,title){
 }
 
 </script>
-
-<?php
-    if(isset($_GET['delpost'])){
-        $stmt = $db->prepare('DELETE FROM blogue_posts WHERE postID = :postID');
-        $stmt->execute(array(':postID' => $_GET['delpost']));
-
-        header('Location: index.php?action=deleted');
-    }
-
-    if(isset($_GET['action'])){
-        echo "<h2 class='deleted'>Post ${_GET['action']}</h2>";
-    }
-?>
 
 
 <!-- DELETE POST FUNCTION END -->

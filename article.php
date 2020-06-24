@@ -3,22 +3,22 @@
 require_once './header/header.php';
 //Article ID validation
 $articleID = trim($_GET['id'], "\t\n\r\0\x0B"); //Getting ID from $GET
-$articleIdArray = $db->query('SELECT postID FROM blogue_posts'); //Getting all possible ID's
+$articleIdQuery = $db->query('SELECT postID FROM blogue_posts'); //Getting all possible ID's
 
 $theCheck = false; //Default check is false
-
+$IdArray = [];
 
 //check prosses
-while($row = $articleIdArray->fetch()){
-    if ($_GET['id'] !== '' && in_array($_GET['id'], $row['postID'])) {
-        $theCheck = true;
-        break;
-    }
+while($row = $articleIdQuery->fetch()){
+    array_push($IdArray,  $row['postID']);
 }
 
+if(in_array($_GET['id'], $IdArray)){
+    $theCheck = true;
+}
 
 //If check failed, user gets redirected to main page
-if (!$theCheck) {
+if (!$theCheck || $_GET['id'] == '') {
     header('Location: ./');
 }
 //Article ID validation END

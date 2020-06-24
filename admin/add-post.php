@@ -1,69 +1,93 @@
 <?php
 require_once './admin-header.php';
-?>
-
-<?php
-
-    //Post Texts
-    $postTitle = $_POST['postTitle'];
-    $postCont = $_POST['postCont'];
-    $postDesc = $_POST['postDesc'];
-    //Post Img
-    $picTmp = $_FILES['postImg']['tmp_name'];
-    $picSize = $_FILES['postImg']['size'];
-    $picName = $_FILES['postImg']['name'];
-    $picType = $_FILES['postImg']['type'];
-    $path = '../includes/pictures/';
-    $filedir = $path.$picName;
-
-    //Img Validation functions
 
 
-    if(isset($_POST['submit'])){
+//Post Texts
+$postTitle = $_POST['postTitle'];
+$postCont = $_POST['postCont'];
+$postDesc = $_POST['postDesc'];
 
-        if($postTitle ==''){
-            $error[] = 'Please enter the title.';
+
+//Img Validation functions
+
+
+if(isset($_POST['submit'])){
+
+    if($postTitle ==''){
+        $error[] = 'Please enter the title.';
+    }
+
+    if($postDesc ==''){
+        $error[] = 'Please enter the description.';
+    }
+
+    if($postCont ==''){
+        $error[] = 'Please enter the content.';
+    }
+
+
+    if($_FILES['postImg']['size'] !== 0){
+
+        //Post Img
+        $picTmp = $_FILES['postImg']['tmp_name'];
+        $picSize = $_FILES['postImg']['size'];
+        $picName = $_FILES['postImg']['name'];
+        $picType = $_FILES['postImg']['type'];
+        $path = '../includes/pictures/';
+        $filedir = $path.$picName;      
+        $regexPattern = "/.*\.(gif|jpe?g|png)$/i";
+        $extensions= array("jpeg","jpg","png");
+
+        if(preg_match($regexPattern,$picName) == false){
+            $error[]="Extension is not allowed, please choose a JPEG or PNG file.";
+        }
+        if($picSize > 2097152) {
+            $error[] = 'File size should be less than 2 MB';
+        }
+        if($picSize < 51200) {
+            $error[] = 'File size should be greater than 50 KB';
         }
 
-        if($postDesc ==''){
-            $error[] = 'Please enter the description.';
-        }
-    
-        if($postCont ==''){
-            $error[] = 'Please enter the content.';
-        }
+    }
 
 
-        //Img validation
+    if(!isset($error)){
 
+        try{
 
+            $stmt = $db->prepare('INSERT INTO blogue_posts (postTitle, postImg, postDesc, postCont) VALUES (:postTitle, :postImg, :postDesc, :postCont)');
 
-        if(!isset($error)){
+            
 
-            try{
-
-                $stmt = $db->prepare('INSERT INTO blogue_posts (postTitle, postImg, postDesc, postCont) VALUES (:postTitle, :postImg, :postDesc, :postCont)');
-                $stmt->execute(array(
+            $queryArr = array(
                     ':postTitle' => $postTitle,
-                    ':postImg' => $picName,
+                    ':postImg' => 'default.jpg',
                     ':postDesc' => $postDesc,
                     ':postCont' => $postCont
-                ));
+            );
 
-                move_uploaded_file($picTmp, $filedir);
-
-            } catch (PDOException $e){
-                echo $e->getMessage;
+            if($_FILES['postImg']['size'] !== 0){
+                $queryArr[':postImg'] = $picName;
             }
-        }
-    }
 
-    //Check for an errors
-    if(isset($error)){
-        foreach($error as $error){
-            echo '<p class="error">'.$error.'</p>';
+            $stmt->execute($queryArr);
+
+            move_uploaded_file($picTmp, $filedir);
+            header('Location: index.php?action=added');
+            exit;
+
+        } catch (PDOException $e){
+            echo $e->getMessage;
         }
     }
+}
+
+//Check for an errors
+if(isset($error)){
+    foreach($error as $error){
+        echo '<p class="error">'.$error.'</p>';
+    }
+}
 
 ?>
 
@@ -76,12 +100,12 @@ require_once './admin-header.php';
             <input type="text" name="postTitle" value="<?php if(isset($error)){echo $_POST['postTitle'];}?>">
             <br>
             <label for="postDesc">Short Description</label>
-            <input type="text" name="postDesc" value="<?php if(isset($error)){echo $_POST['postDesc'];}?>">
+            <input type="text" name="postDesc" value="<?php if(isset($error)){echo $_POST['postDesc'];} ?>">
             <br>
             <label>Content</label>
-            <textarea name='postCont' rows='30'value='<?php if(isset($error)){ echo $_POST['postCont'];} ?>'></textarea>
+            <textarea name='postCont' rows='30' ><?php if(isset($error)){echo $_POST['postCont'];} ?></textarea>
 
-            <input type='file' name='postImg'><?php if(isset($error))?>
+            <input type='file' name='postImg'>
             <br>
             <input type='submit' name='submit' value='Submit'>
         </form>
