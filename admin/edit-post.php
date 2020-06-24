@@ -15,10 +15,7 @@ $postTitle = $_POST['postTitle'];
 $postCont = $_POST['postCont'];
 $postDesc = $_POST['postDesc'];
 
-
-//Img Validation functions
-
-
+//Submit Handler
 if(isset($_POST['submit'])){
 
     if($postTitle ==''){
@@ -90,6 +87,7 @@ if(isset($_POST['submit'])){
         }
     }
 }
+//Submit Handler END
 
 //Check for an errors
 if(isset($error)){

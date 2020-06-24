@@ -7,10 +7,7 @@ $postTitle = $_POST['postTitle'];
 $postCont = $_POST['postCont'];
 $postDesc = $_POST['postDesc'];
 
-
-//Img Validation functions
-
-
+//Submit Handeler
 if(isset($_POST['submit'])){
 
     if($postTitle ==''){
@@ -25,7 +22,7 @@ if(isset($_POST['submit'])){
         $error[] = 'Please enter the content.';
     }
 
-
+    //CHECK if there was an image input
     if($_FILES['postImg']['size'] !== 0){
 
         //Post Img
@@ -49,6 +46,7 @@ if(isset($_POST['submit'])){
         }
 
     }
+    //CHECK if there was an image input END
 
 
     if(!isset($error)){
@@ -68,11 +66,11 @@ if(isset($_POST['submit'])){
 
             if($_FILES['postImg']['size'] !== 0){
                 $queryArr[':postImg'] = $picName;
+                $stmt->execute($queryArr);
+                move_uploaded_file($picTmp, $filedir);
             }
 
             $stmt->execute($queryArr);
-
-            move_uploaded_file($picTmp, $filedir);
             header('Location: index.php?action=added');
             exit;
 
@@ -81,6 +79,7 @@ if(isset($_POST['submit'])){
         }
     }
 }
+//Submit Handeler END
 
 //Check for an errors
 if(isset($error)){
