@@ -68,9 +68,11 @@ if(isset($_POST['submit'])){
                 $queryArr[':postImg'] = $picName;
                 $stmt->execute($queryArr);
                 move_uploaded_file($picTmp, $filedir);
+            }else{
+                $stmt->execute($queryArr);
             }
 
-            $stmt->execute($queryArr);
+            
             header('Location: index.php?action=added');
             exit;
 
