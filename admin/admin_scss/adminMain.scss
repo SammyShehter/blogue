@@ -1,0 +1,71 @@
+//admin Header Menu
+.adminMenu{
+    height: 100%;
+    background:$back-color;
+    h3{
+        margin-left: 2vw;
+        margin-right: auto;
+    }
+
+    button{
+        margin: 1vh 3vw 1vh auto;
+
+        a{
+            color: $front-color;
+            overflow-wrap: normal;
+        }
+    }
+}
+//admin Header Menu End
+
+
+//index
+.adminMain{
+    background:$back-color;
+    .mainTable{
+        background:$front-color;
+        padding: 2vh 2vw;
+    
+        button{
+            margin-top: 1vh;
+        }
+        a{
+            color: $front-color;
+        }
+    }
+}
+
+.logout{
+    width: 100%;
+}
+
+
+.postAction{
+    padding: 3vw;
+    background: $buttonColor;
+    font-size: 4rem;
+    color: $front-color;
+}
+//index END
+
+form{
+    background:$front-color;
+    padding: 3vh 2vw;
+
+    h2{
+        font-size: 3rem;
+        margin-bottom: 3vw;
+    }
+
+    input{
+        outline: 0;
+        margin: 0 0 1rem;
+        padding: 1rem;
+        width: 100%;
+    }
+    textarea{
+        width: 100%;
+    }
+}
+
+//AddPost & EditPost

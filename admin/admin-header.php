@@ -1,5 +1,8 @@
 <?php
 require_once '../includes/config.php';
+if($filename == __DIR__.'/admin-header.php' || $filename == __DIR__.'/admin-footer.php'){
+    header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +15,18 @@ require_once '../includes/config.php';
 </head>
 <body>
 <?php 
-
-
 $filename = $_SERVER['SCRIPT_FILENAME'];
-
-if($filename !== __DIR__.'/login.php'){
+if($filename == __DIR__.'/index.php' ){
 ?>
 <header>
-
+    <div class="adminMenu row">
+        <h3 class='flex-center'>Hi Sammy! =)</h3>
+        <div>
+            <button><a href="./add-post.php">Add new post</a></button>
+            <button><a href="../">Visit Website</a></button>
+        </div>
+        
+    </div>
 </header>
 <?php
 }
@@ -27,10 +34,22 @@ if($filename !== __DIR__.'/login.php'){
 if($filename == __DIR__.'/edit-post.php' || $filename == __DIR__.'/add-post.php'){
 ?>
 <script src="./textarea.js"></script>
-<script>tinymce.init({
-    selector:'textarea',
+<script>
+    tinymce.init({
+    selector:'.postContent',
     plugins: "anchor"
-    });</script>
+    });
+</script>
+
+<header>
+    <div class="adminMenu row">
+        <h3 class='flex-center'>What's on your mind?</h3>
+        <div>
+            <button><a href="./index.php">Back</a></button>
+            <button><a href="<?php echo $config['links']['homepage']; ?>">Visit Website</a></button>
+        </div>
+    </div>
+</header>
 <?php
 }
 ?>

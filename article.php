@@ -38,19 +38,22 @@ if ($_GET['id'] == '' && $row['postID'] !== $_GET['id']) {
 $date = date('l \, \a\t jS \of F Y', strtotime($row['postDate']));
 
 echo "
-    <div class='g flex container'>
-        <div class='u-14-24 post'>
+    <div class='grid flex container'>
+        <div class='u-1 u-lg-14-24 post fancyBoxShadow'>
             <div class='postText'>
                 <small>Posted on ${date}</small>
-                <h1 class='postTitle'>${row['postTitle']}</h1>
+                <h2 class='postTitle'>${row['postTitle']}</h2>
                 <div class='postImg'>
                     <img class='img-fluid' src='includes/pictures/${row['postImg']}'>
                 </div>
-                <div class='postContetnt'><p>${row['postCont']}</p></div>
+                <div class='postContetnt'>${row['postCont']}</div>
             </div>
         </div>
-        <div class='u-8-24 kek'>
-            <div></div>
+        <div class='u-1 u-lg-8-24 sidebar fancyBoxShadow'>
+            <div>
+                <h3>We_watch</h3>
+                <script type='text/javascript' src='//rf.revolvermaps.com/0/0/8.js?i=53sw0hib5og&amp;m=2&amp;c=ff0000&amp;cr1=ffffff&amp;f=tahoma&amp;l=17&amp;v0=10' async='async'></script>
+            </div>
         </div>
     </div>
 ";

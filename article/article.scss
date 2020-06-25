@@ -3,8 +3,7 @@
     .post{
         padding: 4vh 4vw;
         margin: 0 auto 0 auto;
-        background:#fff;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        background:$front-color;
 
         .postText{
             .postTitle{
@@ -22,15 +21,31 @@
             }
         }
     }
-    .kek{
-        height: 1000px;
-        padding: 4vh 2vw;
-        background:#fff;
+    .sidebar{
+        height: 100%;
+        padding: 4vh 4vw;
+        background:$front-color;
+    }
+}
 
-        div{
-            background:red;
-            height: 800px;
+@include media('<=tablet'){
+    .container{
+        margin:0;
+
+        .post{
+            flex-direction: column-reverse;
+            margin:.5vw;
+            .postText{
+                width: 100%;
+            }
+            .postImg{
+                width:100%;
+            }
+        }
+        .sidebar{
+            margin:.5vw;
         }
     }
+
 }
     

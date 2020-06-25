@@ -18,43 +18,45 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
     }
 
     if(isset($_GET['action'])){
-        echo "<h2 class='deleted'>Post ${_GET['action']}</h2>";
+        echo "<h2 class='postAction'>Post ${_GET['action']}</h2>";
     }
 ?>
 
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Date</th>
-        <th>Decsription</th>
-        <th>Action</th>
-    </tr>
-    
-    <?php
-    try{
-        $stmt = $db->query('SELECT postID, postDesc, postTitle, postDate FROM blogue_posts');
-        while($row = $stmt->fetch()){
-            $postDate = date('jS M Y', strtotime($row['postDate']));
-            $postDesc = substr($row['postDesc'], 0,50);
-            echo "
-                    <tr>
-                        <td>${row['postTitle']}</td>
-                        <td>${postDate}</td>
-                        <td>${postDesc}</td>
-                        <td>
-                        <a href='edit-post.php?id=${row['postID']}'>Edit Post</a>
-                        ||
-                        <a href='javascript:delpost(${row['postID']},`${row['postTitle']}`)'>Delete Post</a>
-                        </td>
-                    </tr>
-            ";
-        }
-    } catch(PDOException $e){
-        echo $e->getMessage();
-    }
+<div class="grid adminMain">
+    <table class="u-1 mainTable flex-center">
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Decsription</th>
+            <th>Action</th>
+        </tr>
         
-    ?>
-</table>
+        <?php
+        try{
+            $stmt = $db->query('SELECT postID, postDesc, postTitle, postDate FROM blogue_posts');
+            while($row = $stmt->fetch()){
+                $postDate = date('jS M Y', strtotime($row['postDate']));
+                $postDesc = substr($row['postDesc'], 0,50);
+                echo "
+                        <tr>
+                            <td>${row['postTitle']}</td>
+                            <td>${postDate}</td>
+                            <td>${postDesc}</td>
+                            <td>
+                            <button><a href='edit-post.php?id=${row['postID']}'>Edit Post</a></button>
+                            <button><a href='javascript:delpost(${row['postID']},`${row['postTitle']}`)'>Delete Post</a></button>
+                            </td>
+                        </tr>
+                ";
+            }
+        } catch(PDOException $e){
+            echo $e->getMessage();
+        }
+            
+        ?>
+    </table>
+</div>
+
 
 <!-- DELETE POST FUNCTION -->
 
@@ -77,7 +79,7 @@ function delpost(id,title){
 <!-- Logout -->
 <form action="" method="post">
 
-    <button name="logout">Logout</button>
+    <button class='logout' name="logout">Logout</button>
 
 </form>
 

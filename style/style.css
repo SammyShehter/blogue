@@ -1466,11 +1466,12 @@ a {
 
 .main {
   background: #fff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   height: 80px;
   /*DROPDOWN SECTION*/ }
   .main .logo {
     width: 120px; }
+  .main .mobile-menu-call {
+    display: none; }
   .main .menu {
     list-style-type: none;
     padding-left: 3vw;
@@ -1482,25 +1483,31 @@ a {
         text-decoration: none;
         padding: 0 2vw; }
         .main .menu li a:hover {
-          background: #fffd79; }
-  .main .dropdown {
-    position: relative; }
-    .main .dropdown li {
-      height: inherit; }
-    .main .dropdown .dropdown-menu {
-      display: none; }
-    .main .dropdown:hover .dropdown-menu {
-      position: absolute;
-      left: 0;
-      display: block; }
-      .main .dropdown:hover .dropdown-menu a {
-        color: black;
-        background-color: #fff;
-        padding: 2vh 5vw 2vh 1vw;
-        text-decoration: none;
-        display: block; }
-        .main .dropdown:hover .dropdown-menu a:hover {
-          color: red; }
+          background: #f0f0f0; }
+  @media (min-width: 1025px) {
+    .main .dropdown ul {
+      position: relative;
+      list-style: none; }
+      .main .dropdown ul li {
+        height: inherit;
+        list-style: none; }
+        .main .dropdown ul li .submenu {
+          display: none; }
+        .main .dropdown ul li:hover .submenu, .main .dropdown ul li:focus-within .submenu {
+          position: absolute;
+          left: 0;
+          display: block;
+          visibility: visible;
+          opacity: 1;
+          box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.75); }
+          .main .dropdown ul li:hover .submenu a, .main .dropdown ul li:focus-within .submenu a {
+            width: 15vw;
+            background-color: #fff;
+            padding: 2vh 5vw 2vh 1vw;
+            text-decoration: none;
+            display: block; }
+            .main .dropdown ul li:hover .submenu a:hover, .main .dropdown ul li:focus-within .submenu a:hover {
+              background: #f0f0f0; } }
   .main .search {
     margin-left: auto;
     margin-right: 2vw; }
@@ -1512,6 +1519,51 @@ a {
       .main .search a i {
         transform: translate(8px, 6px); }
 
+@media (max-width: 1024px) {
+  .main {
+    width: 100%;
+    height: 100%; }
+    .main .mobile-menu-call {
+      display: flex;
+      width: 10vw;
+      order: 2; }
+    .main .menu {
+      display: none;
+      padding-right: 1vw;
+      order: 3;
+      width: 100%;
+      z-index: 2;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      box-shadow: 0px 7px 5px 0px rgba(0, 0, 0, 0.2); }
+      .main .menu li {
+        width: 100%;
+        height: 5vh; }
+        .main .menu li a {
+          justify-content: flex-start; }
+          .main .menu li a:hover {
+            background: unset; }
+      .main .menu .dropdown {
+        height: 100%; }
+        .main .menu .dropdown ul li {
+          height: 100%; }
+          .main .menu .dropdown ul li a {
+            height: 5vh; }
+          .main .menu .dropdown ul li .submenu {
+            display: none;
+            background: #f0f0f0;
+            box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.2); }
+            .main .menu .dropdown ul li .submenu li {
+              height: 5vh;
+              padding-left: 3vw; }
+              .main .menu .dropdown ul li .submenu li a {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%; }
+    .main .search {
+      order: 1; } }
 .boxes .box {
   background: red;
   height: 25vh; }
@@ -1537,8 +1589,7 @@ a {
   .container .post {
     padding: 4vh 4vw;
     margin: 0 auto 0 auto;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+    background: #fff; }
     .container .post .postText .postTitle {
       margin: 0 0 2.5vh 0;
       font-size: 2.1875rem;
@@ -1548,44 +1599,83 @@ a {
       font-size: 1.1875rem;
       line-height: 1.8125rem;
       margin: 1rem 0 2.5rem 0; }
-  .container .kek {
-    height: 1000px;
-    padding: 4vh 2vw;
+  .container .sidebar {
+    height: 100%;
+    padding: 4vh 4vw;
     background: #fff; }
-    .container .kek div {
-      background: red;
-      height: 800px; }
 
+@media (max-width: 768px) {
+  .container {
+    margin: 0; }
+    .container .post {
+      flex-direction: column-reverse;
+      margin: .5vw; }
+      .container .post .postText {
+        width: 100%; }
+      .container .post .postImg {
+        width: 100%; }
+    .container .sidebar {
+      margin: .5vw; } }
 .authForm {
   height: 100vh; }
   .authForm form {
-    background: white;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background: #fff;
     padding: 3rem;
     width: 30%; }
     .authForm form input {
       outline: 0;
-      background: #f2f2f2;
+      background: #f0f0f0;
       border: 0;
       margin: 0 0 1rem;
       padding: 1rem;
       width: 100%; }
     .authForm form button {
-      text-transform: uppercase;
-      outline: 0;
-      background: #0177d4;
-      border: 0;
-      padding: 1rem;
-      color: #FFFFFF;
-      -webkit-transition: all 0.3 ease;
-      transition: all 0.3 ease;
-      cursor: pointer;
       width: 100%; }
-      .authForm form button:hover, .authForm form button:active, .authForm form button:focus {
-        background: #015ba1; }
 
-th, td {
-  padding: 1rem; }
+.adminMenu {
+  height: 100%;
+  background: #f0f0f0; }
+  .adminMenu h3 {
+    margin-left: 2vw;
+    margin-right: auto; }
+  .adminMenu button {
+    margin: 1vh 3vw 1vh auto; }
+    .adminMenu button a {
+      color: #fff;
+      overflow-wrap: normal; }
+
+.adminMain {
+  background: #f0f0f0; }
+  .adminMain .mainTable {
+    background: #fff;
+    padding: 2vh 2vw; }
+    .adminMain .mainTable button {
+      margin-top: 1vh; }
+    .adminMain .mainTable a {
+      color: #fff; }
+
+.logout {
+  width: 100%; }
+
+.postAction {
+  padding: 3vw;
+  background: #0177d4;
+  font-size: 4rem;
+  color: #fff; }
+
+form {
+  background: #fff;
+  padding: 3vh 2vw; }
+  form h2 {
+    font-size: 3rem;
+    margin-bottom: 3vw; }
+  form input {
+    outline: 0;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    width: 100%; }
+  form textarea {
+    width: 100%; }
 
 * {
   box-sizing: border-box; }
@@ -1596,33 +1686,65 @@ body {
 
 small {
   font-weight: 500;
-  color: #616060;
+  color: #616060 !important;
   font-size: .75rem;
   line-height: 1.375rem; }
 
 p {
   color: #5f5e5e; }
 
-.postCat {
-  font-weight: 500;
-  margin-bottom: 1vh;
-  line-height: 1.375rem;
-  font-size: 0.875rem; }
+a {
+  color: #4d4d4d; }
+  a:hover {
+    color: black; }
+
+button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #0177d4;
+  border: 0;
+  padding: 1rem;
+  color: #fff;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  width: auto; }
+  button:hover, button:active, button:focus {
+    background: #015ba1; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222; }
+
+th, td {
+  padding: 1rem; }
+
+.error {
+  padding: 2vw;
+  background: red;
+  font-size: 1rem;
+  color: #fff; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+.fancyBoxShadow {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
 
 .postMain {
   justify-content: space-evenly; }
   .postMain .postDemo {
     display: flex;
     margin: 2vw;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+    background: #fff; }
     .postMain .postDemo .postText {
       width: 60%;
       padding: 1.5rem; }
       .postMain .postDemo .postText .postTitle {
         margin: 0; }
         .postMain .postDemo .postText .postTitle a {
-          color: #333;
           font-size: 1.375rem;
           line-height: 1.625rem;
           font-weight: 400; }
@@ -1634,10 +1756,10 @@ p {
         line-height: 1.5rem; }
       .postMain .postDemo .postText .readMore {
         font-weight: bold;
-        color: #0177d4;
+        color: #0177d4 !important;
         flex-wrap: nowrap; }
         .postMain .postDemo .postText .readMore:hover {
-          color: darkblue; }
+          color: #013e6e !important; }
     .postMain .postDemo .postImg {
       width: 40%; }
       .postMain .postDemo .postImg img {

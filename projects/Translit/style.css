@@ -1,0 +1,33 @@
+.title {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fcc883;
+  }
+
+  .textarea-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  #translit {
+    height: 20rem;
+    width: 90%;
+  }
+
+  .FAQ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .FAQ-text{
+    width: 90%;
+  }
+
+  li+li {
+    margin-top: 10px;
+  } 

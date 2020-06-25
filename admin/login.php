@@ -6,8 +6,8 @@ require_once './admin-header.php';
 if($user->is_logged_in()){ header('Location: index.php'); exit; }
 ?>
 
-<div class='authForm flex-center'>
-    <form action="" method="post">
+<div class="authForm flex-center">
+    <form class="fancyBoxShadow" action="" method="post">
         <input type="text" name="username" placeholder="Username" value="" />
         <input type="password" name="password" placeholder="Password" value="" />
         <button type="submit" name="submit">Login</button>
@@ -37,7 +37,6 @@ setInterval(date,1000*60*60);
 
 <?php
 
-require_once './admin-footer.php';
 
 
 //process login form if submitted

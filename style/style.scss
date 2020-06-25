@@ -1,7 +1,6 @@
 @import './myLib/lib';
 @import './mixins';
 @import './colors';
-@import '../about_me/about_me';
 @import '../header/header';
 @import '../fourBoxes/fourBoxes';
 @import '../footer/footer';
@@ -9,7 +8,7 @@
 
 //Admin Area
 @import '../admin/admin_scss/login';
-@import '../admin/admin_scss/index';
+@import '../admin/admin_scss/adminMain';
 //Admin Area End
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -23,25 +22,72 @@
 
 body{
     font-family: 'Lato', sans-serif;
-    background: #f0f0f0;
+    background: $back-color;
 }
 
 small{
     font-weight: 500;
-    color:#616060;
+    color:$smallColor !important;
     font-size: .75rem;
     line-height: 1.375rem;
 }
 
 p{
-    color:#5f5e5e;
+    color:$parColor;
 }
 
-.postCat{
-    font-weight: 500;
-    margin-bottom: 1vh;
-    line-height: 1.375rem;
-    font-size: .875rem
+a{
+    color:lighten($linkColor, 10%);
+    &:hover{
+        color:darken($linkColor, 50%);
+    }
+}
+button{
+    text-transform: uppercase;
+    outline: 0;
+    background: $buttonColor;
+    border: 0;
+    padding: 1rem;
+    color: $front-color;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    width: auto;
+    &:hover,&:active,&:focus {
+        background: darken($buttonColor, 10%);
+      }
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: $HeadingColor;
+}
+
+th,td{
+    padding: 1rem;
+}
+
+// .postCat{
+//     font-weight: 500;
+//     margin-bottom: 1vh;
+//     line-height: 1.375rem;
+//     font-size: .875rem
+// }
+
+.error{
+    padding: 2vw;
+    background: red;
+    font-size: 1rem;
+    color: $front-color;
+}
+
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.fancyBoxShadow{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 //CommonStyles END
 
@@ -52,8 +98,7 @@ p{
     .postDemo{
         display:flex;
         margin:2vw;
-        background:#fff;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        background:$front-color;
 
         .postText{
             width: 60%;
@@ -62,7 +107,6 @@ p{
             .postTitle{
                 margin:0;
                 a{
-                    color: #333;
                     font-size: 1.375rem;
                     line-height: 1.625rem;
                     font-weight: 400;
@@ -80,10 +124,10 @@ p{
 
             .readMore{
                 font-weight: bold;
-                color: #0177d4;
+                color: $readMoreColor !important;
                 flex-wrap: nowrap;
                 &:hover{
-                    color: darkblue;
+                    color: darken($readMoreColor, 20%) !important;
                 }
             }
         }
@@ -95,8 +139,6 @@ p{
                 width:100%;
                 height:100%;
                 display: block;
-                // width: 100vw;
-                // height: 100vh;
                 object-fit: cover;
             }
         }

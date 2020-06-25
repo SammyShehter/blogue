@@ -13,28 +13,31 @@
 <body>
     <header>
         <div class="container-fluid">
-            <div class="main row">
+            <div class="main row fancyBoxShadow">
                 <a class="logo" href="<?php echo $config['links']['homepage']; ?>"><img class="img-fluid" src="header/4.png"
                         alt="Logotype Sammy_Shehter_Blogue"></a>
-                    
-                <ul class="menu flex-center max-height">
-                    <!-- DROPDOWN STRUCTURE -->                        
-                    <div class="dropdown max-height">
-                        <li><a class="flex-center menu-active" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                        <div class="dropdown-menu">
-                            <a href="#">KEK</a>
-                            <a href="#">KEK</a>
-                            <a href="#">KEK</a>                            
-                        </div>
-                    </div>
-                    <!-- DROPDOWN STRUCTURE END -->
 
+                <a class="mobile-menu-call flex-center" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>    
+                
+                <nav class="menu flex-center max-height">
+                    
+                    <!-- DROPDOWN STRUCTURE -->
+                    <li class="dropdown">
+                        <ul class="max-height">
+                            <li><a class="flex-center menu-active" href="#">Projects &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu" aria-label="submenu">
+                                    <li><a href="./projects/formValidator/">Form Validator</a></li>
+                                    <li><a href="./projects/Translit/">Translit</a></li>
+                                    <li><a href="./projects/aviasalesAPI">Aviasales</a></li>
+                                    <li><a href="./projects/movieSeats">Movie Seats</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- DROPDOWN STRUCTURE END -->
+                    <li><a class="flex-center" href="./admin">Admin</a></li>
                     <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                    <li><a class="flex-center" href="<?php echo $config['links']['homepage']; ?>">Home</a></li>
-                </ul>
+                </nav>
 
                 <div class="search flex-center">
                     <a href="#"><i class="fa fa-search"></i></a>
