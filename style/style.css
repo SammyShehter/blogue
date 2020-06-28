@@ -1623,7 +1623,8 @@ a {
     background: #fff;
     padding: 3rem;
     width: 30%; }
-    .authForm form input {
+    .authForm form min
+    input {
       outline: 0;
       background: #f0f0f0;
       border: 0;
@@ -1631,7 +1632,14 @@ a {
       padding: 1rem;
       width: 100%; }
     .authForm form button {
+      margin-top: 1vh;
       width: 100%; }
+  @media (max-width: 768px) {
+    .authForm form {
+      width: 80%; } }
+  @media (max-width: 320px) {
+    .authForm form {
+      width: 100%; } }
 
 .adminMenu {
   height: 100%;

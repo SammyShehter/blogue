@@ -5,6 +5,7 @@
         background:$front-color;
         padding:3rem;
         width: 30%;
+        min
 
         input{
             outline: 0;
@@ -15,6 +16,19 @@
             width: 100%;
         }
         button{
+            margin-top: 1vh;
+            width: 100%;
+        }
+    }
+
+    @include media('<=tablet'){
+        form{
+            width: 80%;
+        }
+    }
+
+    @include media('<=phone'){
+        form{
             width: 100%;
         }
     }

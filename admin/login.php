@@ -4,12 +4,28 @@ require_once './admin-header.php';
 
 //if not logged in redirecting to login page
 if($user->is_logged_in()){ header('Location: index.php'); exit; }
+
+
+//process login form if submitted
+if(isset($_POST['submit'])){
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    if($user->login($username,$password)){
+        header('Location:index.php');
+        exit;
+    } else {
+        $message = "<p class='error'>Wrong username or password</p>";
+    }
+}
+
 ?>
 
 <div class="authForm flex-center">
     <form class="fancyBoxShadow" action="" method="post">
         <input type="text" name="username" placeholder="Username" value="" />
         <input type="password" name="password" placeholder="Password" value="" />
+        <?php if(isset($message)){ echo $message; } ?>
         <button type="submit" name="submit">Login</button>
     </form>
 </div>
@@ -32,26 +48,3 @@ async function date() {
 date();
 setInterval(date,1000*60*60);
 </script>
-
-
-
-<?php
-
-
-
-//process login form if submitted
-if(isset($_POST['submit'])){
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-
-    if($user->login($username,$password)){
-        header('Location:index.php');
-        exit;
-    } else {
-        $message = "<p class='error'>Wrong username or password</p>";
-    }
-}
-
-if(isset($message)){ echo $message; }
-
-?>
