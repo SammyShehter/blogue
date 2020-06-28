@@ -4,9 +4,7 @@
     padding: 4vh 0 4vh 0;
     a {
       @include round-shape;
+      @include center;
       margin: 0 0.2vw;
-      i {
-        transform: translate(10px, 7px);
-      }
     }
   }

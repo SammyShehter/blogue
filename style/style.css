@@ -1580,9 +1580,10 @@ a {
     height: 30px;
     background: #c7c7c7;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 0.2vw; }
-    .socials a i {
-      transform: translate(10px, 7px); }
 
 .container {
   margin: 4vh; }
