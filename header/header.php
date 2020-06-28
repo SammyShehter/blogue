@@ -27,6 +27,7 @@
                             <li><a class="flex-center menu-active" href="#">Projects &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="submenu" aria-label="submenu">
                                     <li><a href="./projects/formValidator/">Form Validator</a></li>
+                                    <li><a href="./projects/kav-la-oved-calc/calculator.html">Kav La Oved Calculator</a></li>
                                     <li><a href="./projects/Translit/">Translit</a></li>
                                     <li><a href="./projects/aviasalesAPI">Aviasales</a></li>
                                     <li><a href="./projects/movieSeats">Movie Seats</a></li>

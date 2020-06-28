@@ -1,9 +1,55 @@
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
 
     RewriteEngine On
+
+    	RewriteBase /
+	  RewriteCond %{HTTP_HOST} ^sammyshehter
+	  RewriteRule (.*) http://www.sammyshehter.com/$1 [R=301,L]
+	  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+	  RewriteRule ^index\.php$ http://www.sammyshehter.com/ [R=301,L]
+
+    DirectoryIndex index.php
+
+    <IfModule mod_setenvif.c>
+	    SetEnv TZ Asia/Jerusalem
+    </IfModule>
+    ServerSignature Off
+    AddDefaultCharset UTF-8 
+
+    #<ifModule mod_php.c>
+      #php_value	upload_max_filesize	5M
+      #php_value	post_max_size		5M
+      #php_value	default_charset utf-8
+      #php_value	max_execution_time 200
+    #</ifModule>
+
+
+    <ifModule mod_headers.c>
+
+      #chache html or htm 
+      <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=43200"
+      </FilesMatch>
+
+      #cache css js txt
+      <FilesMatch "\.(js|css|txt)$">
+        Header set Cache-Control "max-age=43200"
+      </FilesMatch>
+
+      #cache flash and img
+      <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=43200"
+      </FilesMatch>
+
+      #cache turn off
+      #<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+      #  Header unset Cache-Control
+      #</FilesMatch>
+
+      #month = 2592000
+      #week = 604800
+      #day = 43200
+    </IfModule>
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -247,9 +293,6 @@
 
    # Return 403 Forbidden error.
    RewriteRule .* index.php [F]
-
-
-
 </IfModule>
 #php_flag display_startup_errors on
 #php_flag display_errors on
