@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
                     ':postCont' => $postCont
             );
 
-            if($_FILES['postImg']['size'] !== 0){
+            if($picSize !== 0){
                 $queryArr[':postImg'] = $picName;
                 $stmt->execute($queryArr);
                 move_uploaded_file($picTmp, $filedir);

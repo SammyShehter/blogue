@@ -107,7 +107,7 @@ if(isset($error)){
             <br>
             <label for="postDesc">Short Description</label>
             <br>
-            <textarea type="text" name="postDesc" rows='10' value="<?php if(isset($error)){echo $row['postDesc'];}else{echo $row['postDesc'];} ?>"></textarea>
+            <textarea type="text" name="postDesc" rows='10'><?php if(isset($error)){echo $row['postDesc'];}else{echo $row['postDesc'];} ?></textarea>
             <br>
             <br>
             <label>Content</label>
