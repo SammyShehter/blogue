@@ -27,7 +27,8 @@
     ServerSignature Off
 
     #Throw a 403 Forbidden on common brute force attacks
-    # RedirectMatch 403 ^/admin$
+    RedirectMatch 403 ^/admin$
+    RedirectMatch 403 ^/login$
     # RedirectMatch 403 ^/administrator$
     # RedirectMatch 403 ^/wp-admin$
     # RedirectMatch 403 ^/wp-login.php$
@@ -141,7 +142,7 @@
    ## dots with \.  i.e. use www\.example\.com for www.example.com
    RewriteRule ^images/stories/([^/]+/)*([^/.]+\.)+(jp(e?g|2)?|png|gif|bmp|css|js|swf|ico)$ - [L]
    RewriteCond %{HTTP_REFERER} .
-   RewriteCond %{HTTP_REFERER} !^https?://(www\.)?alexandrlamdan\.pro [NC]
+   RewriteCond %{HTTP_REFERER} !^https?://(www\.)?sammyshehter\.com [NC]
    RewriteCond %{REQUEST_FILENAME} -f
    RewriteRule \.(jp(e?g|2)?|png|gif|bmp|css|js|swf|ico)$ - [F]
 
@@ -151,11 +152,12 @@
 
    ## Back-end protection
    ## This also blocks fingerprinting attacks browsing for XML and INI files
-   RewriteRule ^administrator/?$ - [L]
-   RewriteRule ^administrator/index\.(php|html?)$ - [L]
-   RewriteRule ^administrator/index[23]\.php$ - [L]
-   RewriteRule ^administrator/(components|modules|templates|images|plugins)/([^/]+/)*([^/.]+\.)+(jp(e?g|2)?|png|gif|bmp|css|js|swf|html?|mp(eg?|[34])|avi|wav|og[gv]|xlsx?|docx?|pptx?|zip|rar|pdf|xps|txt|7z|svg|od[tsp]|flv|mov)$ - [L]
-   RewriteRule ^administrator/ - [F]
+   RewriteRule ^admin/?$ - [L]
+   RewriteRule ^admin/index\.(php|html?)$ - [L]
+   RewriteRule ^admin/login\.(php|html?)$ - [L]
+   RewriteRule ^admin/index[23]\.php$ - [L]
+   RewriteRule ^admin/(components|modules|templates|images|plugins)/([^/]+/)*([^/.]+\.)+(jp(e?g|2)?|png|gif|bmp|css|js|swf|html?|mp(eg?|[34])|avi|wav|og[gv]|xlsx?|docx?|pptx?|zip|rar|pdf|xps|txt|7z|svg|od[tsp]|flv|mov)$ - [L]
+   RewriteRule ^admin/ - [F]
 
 
    ##Redirect index.php to /
@@ -163,7 +165,7 @@
    RewriteCond %{THE_REQUEST} !^POST
    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
    RewriteCond %{SERVER_PORT}>s ^(443>(s)|[0-9]+>s)$
-   RewriteRule ^index\.php$ http%2://alexandrlamdan.pro/$1 [R=301,L]
+   RewriteRule ^index\.php$ http%2://sammyshehter.com/$1 [R=301,L]
 
 
    <IfModule mod_expires.c>
@@ -430,4 +432,3 @@ RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Zeus
 RewriteRule ^.* - [F,L]
-
