@@ -29,6 +29,7 @@
                                     <li><a href="./projects/formValidator/">Form Validator</a></li>
                                     <li><a href="./projects/kav-la-oved-calc/calculator.html">Kav La Oved Calculator</a></li>
                                     <li><a href="./projects/Translit/">Translit</a></li>
+                                    <li><a href="./projects/reactApp">Twitter-Analogue</a></li>
                                     <li><a href="./projects/aviasalesAPI">Aviasales</a></li>
                                     <li><a href="./projects/movieSeats">Movie Seats</a></li>
                                 </ul>
