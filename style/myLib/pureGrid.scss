@@ -1,5 +1,4 @@
 .grid {
-  letter-spacing: -0.31em;
   text-rendering: optimizespeed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,9 +16,6 @@
   }
 }
 .opera-only :-o-prefocus,
-.grid {
-  word-spacing: -0.43em;
-}
 .u {
   display: inline-block;
   letter-spacing: normal;
