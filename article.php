@@ -1,5 +1,6 @@
 <?php
 
+
 require_once './header/header.php';
 //Article ID validation
 $articleID = trim($_GET['id'], "\t\n\r\0\x0B"); //Getting ID from $GET
