@@ -2,9 +2,9 @@
 
 include "./config.php";
 
-if(isset($_GET['request'])){
+if(isset($_POST['request'])){
 
-    $request = $_GET['request'];
+    $request = $_POST['request'];
 
     try{
         $stmt = $db->prepare('SELECT postID, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC LIMIT 1 OFFSET :offset');

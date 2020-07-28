@@ -22,8 +22,8 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
     }
 ?>
 
-<div class="grid adminMain">
-    <table class="u-1 mainTable flex-center">
+<div class="grid flex-center adminMain">
+    <table class="u-1 u-md-18-24 mainTable flex-center fancyBoxShadow">
         <tr>
             <th>Title</th>
             <th>Date</th>
@@ -37,6 +37,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
             while($row = $stmt->fetch()){
                 $postDate = date('jS M Y', strtotime($row['postDate']));
                 $postDesc = substr($row['postDesc'], 0,50);
+                // $postDesc = $row['postDesc'];
                 echo "
                         <tr>
                             <td>${row['postTitle']}</td>
@@ -47,6 +48,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); exit; }
                             <button><a href='javascript:delpost(${row['postID']},`${row['postTitle']}`)'>Delete Post</a></button>
                             </td>
                         </tr>
+                        
                 ";
             }
         } catch(PDOException $e){
@@ -77,18 +79,19 @@ function delpost(id,title){
 
 
 <!-- Logout -->
-<form action="" method="post">
-
-    <button class='logout' name="logout">Logout</button>
-
-</form>
-
 <?php
     if(isset($_POST['logout'])){
         $user->logout();
         header('Location: login.php');
     }
 ?>
+
+<form action="" method="post" class="logout flex-center">
+    <button name="logout">Logout</button>
+</form>
+
+
+
 <!-- Logout END-->    
 
 

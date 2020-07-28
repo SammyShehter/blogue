@@ -28,6 +28,7 @@
     
         button{
             margin-top: 1vh;
+            margin-bottom: 1vh;
         }
         a{
             color: $front-color;
@@ -36,7 +37,11 @@
 }
 
 .logout{
-    width: 100%;
+    background: none;
+    button{
+        width: 80%;
+    }
+    
 }
 
 

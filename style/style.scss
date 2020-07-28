@@ -62,9 +62,20 @@ h1,h2,h3,h4,h5,h6{
     color: $HeadingColor;
 }
 
+tr{
+    border-bottom: 1px solid #000;
+}
+
 th,td{
     padding: 1rem;
 }
+@include media('<=tablet'){
+    th,td{
+        padding:0;
+    }
+    
+}
+
 
 // .postCat{
 //     font-weight: 500;

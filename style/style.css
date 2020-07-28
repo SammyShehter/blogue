@@ -1655,12 +1655,15 @@ a {
     background: #fff;
     padding: 2vh 2vw; }
     .adminMain .mainTable button {
-      margin-top: 1vh; }
+      margin-top: 1vh;
+      margin-bottom: 1vh; }
     .adminMain .mainTable a {
       color: #fff; }
 
 .logout {
-  width: 100%; }
+  background: none; }
+  .logout button {
+    width: 80%; }
 
 .postAction {
   padding: 3vw;
@@ -1720,9 +1723,15 @@ button {
 h1, h2, h3, h4, h5, h6 {
   color: #222; }
 
+tr {
+  border-bottom: 1px solid #000; }
+
 th, td {
   padding: 1rem; }
 
+@media (max-width: 768px) {
+  th, td {
+    padding: 0; } }
 .error {
   padding: 2vw;
   background: red;

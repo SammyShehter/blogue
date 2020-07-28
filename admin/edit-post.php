@@ -99,7 +99,7 @@ if(isset($error)){
 ?>
 
 <div class='grid flex-center'>
-    <div class='u-18-24'>
+    <div class='u-23-24 u-md-18-24 fancyBoxShadow'>
         <form action="" method="post" enctype='multipart/form-data'>
             <h2>Edit Post: <?php echo $row['postTitle'];?></h2>
             <label for="postTitle">Title</label>
