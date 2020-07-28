@@ -4,10 +4,11 @@ include "./config.php";
 
 if(isset($_POST['request'])){
 
-    $request = $_POST['request'];
+    is_numeric($_POST['request']) ? $request = $_POST['request'] : exit;
+    // $request = $_POST['request'];
 
     try{
-        $stmt = $db->prepare('SELECT postID, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC LIMIT 1 OFFSET :offset');
+        $stmt = $db->prepare('SELECT postID, postTitle, postDesc, postDate, postImg FROM blogue_posts ORDER BY postID DESC LIMIT 4 OFFSET :offset');
         $stmt->execute(array(
             ':offset' => $request
         ));

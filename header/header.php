@@ -42,6 +42,7 @@
                 </nav>
 
                 <div class="search flex-center">
+                    <input type="text" id="fname" name="fname">
                     <a href="#"><i class="fa fa-search"></i></a>
                 </div>
             </div>

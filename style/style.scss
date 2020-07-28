@@ -47,7 +47,8 @@ button{
     outline: 0;
     background: $buttonColor;
     border: 0;
-    padding: 1rem;
+    margin: 1em;
+    padding: 1em;
     color: $front-color;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
@@ -99,6 +100,10 @@ th,td{
 }
 .fancyBoxShadow{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.disabled{
+    pointer-events: none;
 }
 //CommonStyles END
 

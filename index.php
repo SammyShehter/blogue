@@ -11,7 +11,7 @@ require_once "./header/header.php";
 
 <div class="flex-center">
     <img id="loader" src="./includes/pictures/30.svg">
-    <button id="pageno" value="0">kek</button>
+    <button id="pageno">Show more posts</button>
 </div>
 
 
