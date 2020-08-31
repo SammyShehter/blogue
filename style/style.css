@@ -1506,7 +1506,13 @@ a {
               background: #f0f0f0; } }
   .main .search {
     margin-left: auto;
-    margin-right: 2vw; }
+    margin-right: 2vw;
+    position: relative; }
+    .main .search .searchResults {
+      z-index: 2;
+      background: grey;
+      position: relative;
+      left: 0; }
     .main .search a {
       width: 30px;
       height: 30px;
@@ -1616,11 +1622,11 @@ a {
 .authForm {
   height: 100vh; }
   .authForm form {
-    background: #fff;
     padding: 3rem;
-    width: 30%; }
-    .authForm form min
-    input {
+    width: 30%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5); }
+    .authForm form input {
       outline: 0;
       background: #f0f0f0;
       border: 0;

@@ -85,7 +85,17 @@
   .search {
     margin-left: auto;
     margin-right: 2vw;
+    position: relative;
+    // .fname{
 
+
+    // }
+    .searchResults{
+      z-index: 2;
+      background:grey;
+      position: relative;
+      left: 0;
+    }
     a {
       @include round-shape;
 
