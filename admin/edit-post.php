@@ -78,6 +78,12 @@ if(isset($_POST['submit'])){
 
             move_uploaded_file($picTmp, $filedir);
 
+            }else{
+                $stmt = $db->prepare('UPDATE blogue_posts SET postImg = :postImg WHERE postID = :postID');
+                $stmt->execute(array(
+                    ':postImg' => 'default.jpg',
+                    ':postID' => $postID
+                ));
             }
             header('Location: index.php?action=updated');
             exit;
