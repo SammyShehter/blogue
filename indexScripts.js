@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const postMain = document.querySelector('.postMain');
-    const loader = document.querySelector('#loader');
-    const pageno = document.querySelector('#pageno');
+    const postMain = document.querySelector('.postMain')
+    const loader = document.querySelector('#loader')
+    const pageno = document.querySelector('#pageno')
     const pagenoClone = pageno.cloneNode(true)
 
-    const url = './includes/showPosts.php';
-    let pagenoVal = 4;
+    const url = './includes/showPosts.php'
+    let pagenoVal = 4
 
-    loader.style.display = 'none';
+    loader.style.display = 'none'
 
     //AJAX for posts
 
     pageno.addEventListener('click',() => {
-        fetchPosts(pagenoVal);
-        pagenoVal += 4;
-    });
+        fetchPosts(pagenoVal)
+        pagenoVal += 4
+    })
 
     function fetchPosts (offsetNum) {
         fetch(url,{
@@ -28,29 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.log(error))
     }
 
-    fetchPosts(0);
+    fetchPosts(0)
 
     // OLD STYLE AJAX REQUEST
     // function ajaxPostPagin(pagenoNum) {
 
-    //     let request = new XMLHttpRequest();
+    //     let request = new XMLHttpRequest()
 
     //     request.onreadystatechange = () => {
     //         if (request.readyState === 4 && request.status === 200) {
-    //             postMain.innerHTML += request.responseText;
+    //             postMain.innerHTML += request.responseText
     //         } else {
-    //             console.log(`An error occurred during request: ${request.status} ${request.statusText}`);
+    //             console.log(`An error occurred during request: ${request.status} ${request.statusText}`)
     //         }
     //     }
 
-    //     request.open('POST', `./includes/showPosts.php?request=${pagenoNum}`);
+    //     request.open('POST', `./includes/showPosts.php?request=${pagenoNum}`)
 
 
-    //     request.send();
+    //     request.send()
     // }
 
 
 
 
 
-});
+})
